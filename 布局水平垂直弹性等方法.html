@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>task001</title>
+    <style type="text/css">
+        /*水平垂直居中方案1*/
+
+        .mydiv1 {
+            position: absolute;
+            width: 960px;
+            height: 160px;
+            left: 50%;
+            top: 50%;
+            background-color: red;
+            margin-left: -480px;
+            margin-top: -80px;
+        }
+        /*水平垂直居中方案2*/
+
+        .mydiv2 {
+            position: absolute;
+            width: 960px;
+            height: 160px;
+            left: 50%;
+            top: 50%;
+            background: red;
+            transform: translate(-50%, -50%);
+        }
+        /*圆角矩形*/
+
+        .top2,
+        .bottom2,
+        .top3,
+        .bottom3,
+        .top4,
+        .bottom4,
+        .top5,
+        .bottom5 {
+            height: 1px;
+            background: lightblue;
+            overflow: hidden;
+        }
+
+        .top1,
+        .bottom1 {
+            margin: 0px 5px;
+            border-top: solid 1px black;
+        }
+
+        .top2,
+        .bottom2 {
+            margin: 0px 3px;
+            border-left: solid 1px black;
+            border-right: solid 1px black;
+        }
+
+        .top3,
+        .bottom3 {
+            margin: 0px 2px;
+            border-left: solid 1px black;
+            border-right: solid 1px black;
+        }
+
+        .top4,
+        .bottom4 {
+            margin: 0px 1px;
+            border-left: solid 1px black;
+            border-right: solid 1px black;
+        }
+
+        .top5,
+        .bottom5 {
+            margin: 0px 1px;
+            border-left: solid 1px black;
+            border-right: solid 1px black;
+        }
+
+        .main {
+            height: 100%;
+            border-left: solid 1px black;
+            border-right: solid 1px black;
+            background: lightblue;
+        }
+        /*左侧宽度固定 右侧宽度自适应方案1*/
+
+        .a1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+
+        .b1 {
+            width: auto;
+            height: 100px;
+            background-color: blue;
+            margin-left: 100px;
+        }
+        /*左侧宽度固定 右侧宽度自适应方案2*/
+
+        .a2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+
+        .b2 {
+            width: auto;
+            height: 100px;
+            background-color: blue;
+            margin-left: 100px;
+        }
+        /*左右侧宽度固定 中间宽度自适应方案1*/
+
+        .aa1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+
+        .bb1 {
+            margin-left: 100px;
+            margin-right: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .cc1 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            float: right;
+        }
+        /*左右侧宽度固定 中间宽度自适应方案2*/
+
+        .aa2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 8px;
+            background-color: red;
+        }
+
+        .bb2 {
+            margin-left: 100px;
+            margin-right: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .cc2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            right: 8px;
+            background-color: yellow;
+        }
+        /*浮动布局，红色容器中每一行的蓝色容器数量随着浏览器宽度的变化而变化*/
+
+        .div9 {
+            background-color: red;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+
+        .flexbox {
+            float: left;
+            margin: 10px 10px;
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+
+        .clr {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+<!-- div水平垂直居中 -->
+<div>
+    <div class="mydiv1">
+    </div>
+    <div class="mydiv2">
+    </div>
+</div>
+<!-- 圆角矩形 -->
+<div>
+    <div class="top1"></div>
+    <div class="top2"></div>
+    <div class="top3"></div>
+    <div class="top4"></div>
+    <div class="top5"></div>
+    <div class="main">
+        圆角矩形
+    </div>
+    <div class="bottom5"></div>
+    <div class="bottom4"></div>
+    <div class="bottom3"></div>
+    <div class="bottom2"></div>
+    <div class="bottom1"></div>
+</div>
+<!-- 左侧宽度固定 右侧宽度自适应 -->
+<div>
+    <div class="a1">a1</div>
+    <div class="b1">b1</div>
+</div>
+<div>
+    <div class="a2">a2</div>
+    <div class="b2">b2</div>
+</div>
+<!-- 左右侧宽度固定 中间宽度自适应 -->
+<div>
+    <div class="aa1">a1</div>
+    <div class="cc1">c1</div>
+    <!-- 中间的必须放最下边 -->
+    <div class="bb1">b1</div>
+</div>
+<div>
+    <div class="aa2">a2</div>
+    <div class="cc2">c2</div>
+    <!-- 中间的必须放最下边 -->
+    <div class="bb2">b2</div>
+</div>
+<!-- 浮动布局，红色容器中每一行的蓝色容器数量随着浏览器宽度的变化而变化  -->
+<div class="clr"></div>
+<div class="div9">
+    <div class="flexbox"></div>
+    <div class="flexbox"></div>
+    <div class="flexbox"></div>
+    <div class="flexbox"></div>
+    <div class="flexbox"></div>
+    <div class="flexbox"></div>
+    <div class="flexbox"></div>
+    <div class="flexbox"></div>
+    <div class="flexbox"></div>
+    <div class="clr"></div>
+</div>
+</body>
+
+</html>
